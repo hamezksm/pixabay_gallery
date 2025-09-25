@@ -59,7 +59,8 @@ class ApiService {
     // In development, we're usually not served from https
     final isHttps = Uri.base.scheme == 'https';
 
-    return (isLocalhost && (isDevPort || port == 0) && !isHttps) || isGitHubPages;
+    return (isLocalhost && (isDevPort || port == 0) && !isHttps) ||
+        isGitHubPages;
   }
 
   // CORS proxy for development and GitHub Pages
