@@ -40,7 +40,7 @@ class ApiService {
   final http.Client _client = http.Client();
   static const Duration _timeout = Duration(seconds: 30);
 
-  // Check if running in development mode (localhost)
+  // Check if running in development mode (localhost) or GitHub Pages
   bool get _isDevMode {
     // Check if we're running on localhost or 127.0.0.1
     final host = Uri.base.host;
@@ -49,6 +49,9 @@ class ApiService {
         host == '127.0.0.1' ||
         host.isEmpty; // Flutter web-server often has empty host
 
+    // Check if we're on GitHub Pages
+    final isGitHubPages = host.endsWith('.github.io');
+
     // Also check for development ports
     final port = Uri.base.port;
     final isDevPort = port >= 3000 && port <= 9999; // Common dev ports
@@ -56,14 +59,21 @@ class ApiService {
     // In development, we're usually not served from https
     final isHttps = Uri.base.scheme == 'https';
 
-    return isLocalhost && (isDevPort || port == 0) && !isHttps;
+    return (isLocalhost && (isDevPort || port == 0) && !isHttps) || isGitHubPages;
   }
 
-  // CORS proxy for development
+  // CORS proxy for development and GitHub Pages
   String _getCorsProxyUrl(String originalUrl) {
     if (_isDevMode) {
-      // Using a reliable CORS proxy for development
-      return 'https://corsproxy.io/?${Uri.encodeComponent(originalUrl)}';
+      final host = Uri.base.host;
+      // Use different proxy based on environment
+      if (host.endsWith('.github.io')) {
+        // For GitHub Pages, use allorigins.win which is more reliable
+        return 'https://api.allorigins.win/get?url=${Uri.encodeComponent(originalUrl)}';
+      } else {
+        // For local development, use corsproxy.io
+        return 'https://corsproxy.io/?${Uri.encodeComponent(originalUrl)}';
+      }
     }
     return originalUrl;
   }
@@ -132,9 +142,11 @@ class ApiService {
       try {
         final jsonResponse = json.decode(response.body);
 
-        // corsproxy.io returns the response directly, no need to extract
-        // Only allorigins.win needs the 'contents' extraction
+        // Handle different proxy response formats
+        // allorigins.win wraps response in 'contents' field
+        final host = Uri.base.host;
         if (_isDevMode &&
+            host.endsWith('.github.io') &&
             jsonResponse is Map &&
             jsonResponse.containsKey('contents')) {
           return json.decode(jsonResponse['contents']);
