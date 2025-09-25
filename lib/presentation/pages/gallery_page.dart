@@ -51,7 +51,7 @@ class _GalleryPageState extends State<GalleryPage> {
         color: Theme.of(context).colorScheme.surface,
         border: Border(
           bottom: BorderSide(
-            color: Theme.of(context).colorScheme.outline.withOpacity(0.1),
+            color: Theme.of(context).colorScheme.outline.withValues(alpha: 0.1),
             width: 1,
           ),
         ),
@@ -75,7 +75,9 @@ class _GalleryPageState extends State<GalleryPage> {
           Text(
             'Find beautiful images from Pixabay',
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              color: Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
+              color: Theme.of(
+                context,
+              ).colorScheme.onSurface.withValues(alpha: 0.7),
               fontSize: ResponsiveHelper.responsive<double>(
                 context: context,
                 mobile: 14,
@@ -158,20 +160,26 @@ class _GalleryPageState extends State<GalleryPage> {
           Icon(
             Icons.image_search,
             size: 64,
-            color: Theme.of(context).colorScheme.onSurface.withOpacity(0.4),
+            color: Theme.of(
+              context,
+            ).colorScheme.onSurface.withValues(alpha: 0.4),
           ),
           const SizedBox(height: AppConstants.spacingL),
           Text(
             'Start your search',
             style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-              color: Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
+              color: Theme.of(
+                context,
+              ).colorScheme.onSurface.withValues(alpha: 0.7),
             ),
           ),
           const SizedBox(height: AppConstants.spacingM),
           Text(
             'Enter keywords in the search bar to find amazing images',
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              color: Theme.of(context).colorScheme.onSurface.withOpacity(0.5),
+              color: Theme.of(
+                context,
+              ).colorScheme.onSurface.withValues(alpha: 0.5),
             ),
             textAlign: TextAlign.center,
           ),
@@ -211,7 +219,7 @@ class _GalleryPageState extends State<GalleryPage> {
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(
                       color: Theme.of(
                         context,
-                      ).colorScheme.onSurface.withOpacity(0.6),
+                      ).colorScheme.onSurface.withValues(alpha: 0.6),
                     ),
                   ),
                 ],
@@ -302,7 +310,7 @@ class _GalleryPageState extends State<GalleryPage> {
             child: Container(
               width: double.infinity,
               decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.surfaceVariant,
+                color: Theme.of(context).colorScheme.surfaceContainerHighest,
               ),
               child: Image.network(
                 image.webformatURL,
@@ -354,7 +362,7 @@ class _GalleryPageState extends State<GalleryPage> {
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
                           color: Theme.of(
                             context,
-                          ).colorScheme.onSurface.withOpacity(0.7),
+                          ).colorScheme.onSurface.withValues(alpha: 0.7),
                         ),
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
@@ -381,7 +389,7 @@ class _GalleryPageState extends State<GalleryPage> {
                         size: 16,
                         color: Theme.of(
                           context,
-                        ).colorScheme.onSurface.withOpacity(0.6),
+                        ).colorScheme.onSurface.withValues(alpha: 0.6),
                       ),
                       const SizedBox(width: AppConstants.spacingXS),
                       Text(
@@ -413,7 +421,7 @@ class _GalleryPageState extends State<GalleryPage> {
             width: 120,
             height: 120,
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.surfaceVariant,
+              color: Theme.of(context).colorScheme.surfaceContainerHighest,
             ),
             child: Image.network(
               image.webformatURL,
@@ -451,7 +459,7 @@ class _GalleryPageState extends State<GalleryPage> {
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
                         color: Theme.of(
                           context,
-                        ).colorScheme.onSurface.withOpacity(0.7),
+                        ).colorScheme.onSurface.withValues(alpha: 0.7),
                       ),
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
@@ -478,7 +486,7 @@ class _GalleryPageState extends State<GalleryPage> {
                         size: 16,
                         color: Theme.of(
                           context,
-                        ).colorScheme.onSurface.withOpacity(0.6),
+                        ).colorScheme.onSurface.withValues(alpha: 0.6),
                       ),
                       const SizedBox(width: AppConstants.spacingXS),
                       Text(
@@ -515,7 +523,9 @@ class _GalleryPageState extends State<GalleryPage> {
           Text(
             provider.errorMessage ?? 'Unknown error occurred',
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              color: Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
+              color: Theme.of(
+                context,
+              ).colorScheme.onSurface.withValues(alpha: 0.7),
             ),
             textAlign: TextAlign.center,
           ),
@@ -545,7 +555,9 @@ class _GalleryPageState extends State<GalleryPage> {
           Icon(
             Icons.search_off,
             size: 64,
-            color: Theme.of(context).colorScheme.onSurface.withOpacity(0.4),
+            color: Theme.of(
+              context,
+            ).colorScheme.onSurface.withValues(alpha: 0.4),
           ),
           const SizedBox(height: AppConstants.spacingL),
           Text(
@@ -556,7 +568,9 @@ class _GalleryPageState extends State<GalleryPage> {
           Text(
             'No images found for "$query".\nTry different keywords.',
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              color: Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
+              color: Theme.of(
+                context,
+              ).colorScheme.onSurface.withValues(alpha: 0.7),
             ),
             textAlign: TextAlign.center,
           ),

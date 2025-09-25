@@ -86,7 +86,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                   color: Theme.of(
                     context,
-                  ).colorScheme.onSurface.withOpacity(0.7),
+                  ).colorScheme.onSurface.withValues(alpha: 0.7),
                 ),
               ),
               const SizedBox(height: AppConstants.spacingXXL),
@@ -123,7 +123,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       radius: 50,
                       backgroundColor: Theme.of(
                         context,
-                      ).colorScheme.primary.withOpacity(0.1),
+                      ).colorScheme.primary.withValues(alpha: 0.1),
                       child: provider.formState.profile.fullName.isNotEmpty
                           ? Text(
                               provider.formState.profile.initials,

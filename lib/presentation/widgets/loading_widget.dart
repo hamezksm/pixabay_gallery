@@ -36,7 +36,9 @@ class LoadingWidget extends StatelessWidget {
             Text(
               message!,
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                color: Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
+                color: Theme.of(
+                  context,
+                ).colorScheme.onSurface.withValues(alpha: 0.7),
               ),
               textAlign: TextAlign.center,
             ),
@@ -65,7 +67,7 @@ class LoadingOverlay extends StatelessWidget {
         child,
         if (isLoading)
           Container(
-            color: Colors.black.withOpacity(0.3),
+            color: Colors.black.withValues(alpha: 0.3),
             child: LoadingWidget(
               message: loadingMessage ?? AppConstants.loadingMessage,
             ),
@@ -128,9 +130,15 @@ class _ShimmerPlaceholderState extends State<ShimmerPlaceholder>
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
               colors: [
-                Theme.of(context).colorScheme.surfaceVariant.withOpacity(0.3),
-                Theme.of(context).colorScheme.surfaceVariant.withOpacity(0.6),
-                Theme.of(context).colorScheme.surfaceVariant.withOpacity(0.3),
+                Theme.of(
+                  context,
+                ).colorScheme.surfaceContainerHighest.withValues(alpha: 0.3),
+                Theme.of(
+                  context,
+                ).colorScheme.surfaceContainerHighest.withValues(alpha: 0.6),
+                Theme.of(
+                  context,
+                ).colorScheme.surfaceContainerHighest.withValues(alpha: 0.3),
               ],
               stops: [0.0, _animation.value, 1.0],
             ),

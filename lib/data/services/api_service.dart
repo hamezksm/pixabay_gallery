@@ -28,8 +28,7 @@ class TimeoutException extends ApiException {
 }
 
 class ServerException extends ApiException {
-  const ServerException(String message, int statusCode)
-    : super(message, statusCode);
+  const ServerException(super.message, int super.statusCode);
 }
 
 // API Service for handling HTTP requests

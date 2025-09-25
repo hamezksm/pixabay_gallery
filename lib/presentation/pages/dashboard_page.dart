@@ -84,7 +84,9 @@ class _DashboardPageState extends State<DashboardPage> {
         Text(
           'Discover the most popular images on Pixabay',
           style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-            color: Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
+            color: Theme.of(
+              context,
+            ).colorScheme.onSurface.withValues(alpha: 0.7),
             fontSize: ResponsiveHelper.responsive<double>(
               context: context,
               mobile: 14,
@@ -155,7 +157,7 @@ class _DashboardPageState extends State<DashboardPage> {
             child: Container(
               width: double.infinity,
               decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.surfaceVariant,
+                color: Theme.of(context).colorScheme.surfaceContainerHighest,
               ),
               child: Image.network(
                 image.webformatURL,
@@ -223,7 +225,7 @@ class _DashboardPageState extends State<DashboardPage> {
                             decoration: BoxDecoration(
                               color: Theme.of(
                                 context,
-                              ).colorScheme.primary.withOpacity(0.1),
+                              ).colorScheme.primary.withValues(alpha: 0.1),
                               borderRadius: BorderRadius.circular(
                                 AppConstants.inputBorderRadius,
                               ),
@@ -263,7 +265,7 @@ class _DashboardPageState extends State<DashboardPage> {
                         size: 16,
                         color: Theme.of(
                           context,
-                        ).colorScheme.onSurface.withOpacity(0.6),
+                        ).colorScheme.onSurface.withValues(alpha: 0.6),
                       ),
                       const SizedBox(width: AppConstants.spacingXS),
                       Text(
@@ -300,7 +302,9 @@ class _DashboardPageState extends State<DashboardPage> {
           Text(
             provider.errorMessage ?? 'Unknown error occurred',
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              color: Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
+              color: Theme.of(
+                context,
+              ).colorScheme.onSurface.withValues(alpha: 0.7),
             ),
             textAlign: TextAlign.center,
           ),

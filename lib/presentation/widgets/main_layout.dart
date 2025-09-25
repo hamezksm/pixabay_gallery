@@ -96,7 +96,7 @@ class _MainLayoutState extends State<MainLayout> {
         color: Theme.of(context).colorScheme.surface,
         border: Border(
           right: BorderSide(
-            color: Theme.of(context).colorScheme.outline.withOpacity(0.1),
+            color: Theme.of(context).colorScheme.outline.withValues(alpha: 0.1),
             width: 1,
           ),
         ),
@@ -194,7 +194,7 @@ class _MainLayoutState extends State<MainLayout> {
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
                     color: Theme.of(
                       context,
-                    ).colorScheme.onSurface.withOpacity(0.7),
+                    ).colorScheme.onSurface.withValues(alpha: 0.7),
                   ),
                 ),
               ],
@@ -251,7 +251,7 @@ class _MainLayoutState extends State<MainLayout> {
         icon,
         color: isSelected
             ? Theme.of(context).colorScheme.primary
-            : Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
+            : Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.7),
       ),
       title: Text(
         title,
@@ -263,7 +263,9 @@ class _MainLayoutState extends State<MainLayout> {
         ),
       ),
       selected: isSelected,
-      selectedTileColor: Theme.of(context).colorScheme.primary.withOpacity(0.1),
+      selectedTileColor: Theme.of(
+        context,
+      ).colorScheme.primary.withValues(alpha: 0.1),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(AppConstants.buttonBorderRadius),
       ),
@@ -286,7 +288,7 @@ class _MainLayoutState extends State<MainLayout> {
       decoration: BoxDecoration(
         border: Border(
           top: BorderSide(
-            color: Theme.of(context).colorScheme.outline.withOpacity(0.1),
+            color: Theme.of(context).colorScheme.outline.withValues(alpha: 0.1),
             width: 1,
           ),
         ),
@@ -297,7 +299,9 @@ class _MainLayoutState extends State<MainLayout> {
           Text(
             'v${AppConstants.appVersion}',
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
-              color: Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
+              color: Theme.of(
+                context,
+              ).colorScheme.onSurface.withValues(alpha: 0.7),
             ),
           ),
           _buildThemeToggle(context),
