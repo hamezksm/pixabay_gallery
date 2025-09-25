@@ -12,8 +12,13 @@ class Validators {
       return 'Email must be less than ${AppConstants.maxEmailLength} characters';
     }
 
+    // Check for trailing dot before @ (invalid case like "user.@example.com")
+    if (value.contains('.@')) {
+      return 'Please enter a valid email address';
+    }
+
     final emailRegex = RegExp(
-      r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
+      r'^[a-zA-Z0-9][a-zA-Z0-9._%+-]*[a-zA-Z0-9]@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
       caseSensitive: false,
     );
 
@@ -84,10 +89,10 @@ class Validators {
       return 'Full name must be less than ${AppConstants.maxNameLength} characters';
     }
 
-    // Check for valid characters (letters, spaces, hyphens, dots)
-    final nameRegex = RegExp(r'^[a-zA-Z\s\-\.]+$');
+    // Check for valid characters (letters, spaces, hyphens, dots, apostrophes)
+    final nameRegex = RegExp(r"^[a-zA-Z\s\-\.']+$");
     if (!nameRegex.hasMatch(value)) {
-      return 'Full name can only contain letters, spaces, hyphens, and dots';
+      return 'Full name can only contain letters, spaces, hyphens, dots, and apostrophes';
     }
 
     // Check for at least two words (first and last name)
