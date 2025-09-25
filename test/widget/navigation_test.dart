@@ -45,7 +45,7 @@ void main() {
           createTestWidget(
             MainLayout(
               currentRoute: AppConstants.dashboardRoute,
-              child: Container(child: Text('Dashboard Content')),
+              child: Text('Dashboard Content'),
             ),
             screenWidth: 1400, // Desktop width
           ),
@@ -65,7 +65,7 @@ void main() {
           createTestWidget(
             MainLayout(
               currentRoute: AppConstants.galleryRoute,
-              child: Container(child: Text('Gallery Content')),
+              child: Text('Gallery Content'),
             ),
             screenWidth: 900, // Tablet width
           ),
@@ -86,7 +86,7 @@ void main() {
             Scaffold(
               body: MainLayout(
                 currentRoute: AppConstants.profileRoute,
-                child: Container(child: Text('Profile Content')),
+                child: Text('Profile Content'),
               ),
             ),
             screenWidth: 600, // Mobile width
@@ -118,7 +118,7 @@ void main() {
           createTestWidget(
             MainLayout(
               currentRoute: AppConstants.dashboardRoute,
-              child: Container(child: Text('Dashboard Content')),
+              child: Text('Dashboard Content'),
             ),
             screenWidth: 1200, // Desktop width
           ),
@@ -148,7 +148,7 @@ void main() {
           createTestWidget(
             MainLayout(
               currentRoute: AppConstants.dashboardRoute,
-              child: Container(child: Text('Content')),
+              child: Text('Content'),
             ),
             screenWidth: 1200,
           ),
@@ -174,7 +174,7 @@ void main() {
           createTestWidget(
             MainLayout(
               currentRoute: AppConstants.dashboardRoute,
-              child: Container(child: Text('Content')),
+              child: Text('Content'),
             ),
           ),
         );
@@ -199,7 +199,7 @@ void main() {
           createTestWidget(
             MainLayout(
               currentRoute: AppConstants.dashboardRoute,
-              child: Container(child: Text('Content')),
+              child: Text('Content'),
             ),
           ),
         );
@@ -232,7 +232,7 @@ void main() {
           createTestWidget(
             MainLayout(
               currentRoute: AppConstants.dashboardRoute,
-              child: Container(child: Text('Content')),
+              child: Text('Content'),
             ),
           ),
         );
@@ -252,7 +252,7 @@ void main() {
             Scaffold(
               body: MainLayout(
                 currentRoute: AppConstants.dashboardRoute,
-                child: Container(child: Text('Content')),
+                child: Text('Content'),
               ),
             ),
             screenWidth: 600, // Mobile width
@@ -270,7 +270,7 @@ void main() {
           createTestWidget(
             MainLayout(
               currentRoute: AppConstants.dashboardRoute,
-              child: Container(child: Text('Content')),
+              child: Text('Content'),
             ),
             screenWidth: 1400, // Desktop width
           ),
@@ -289,7 +289,7 @@ void main() {
           createTestWidget(
             MainLayout(
               currentRoute: AppConstants.dashboardRoute,
-              child: Container(child: Text(testContent)),
+              child: Text(testContent),
             ),
           ),
         );
@@ -305,7 +305,7 @@ void main() {
           createTestWidget(
             MainLayout(
               currentRoute: AppConstants.dashboardRoute,
-              child: Container(child: Text('Content')),
+              child: Text('Content'),
             ),
             screenWidth: 1200, // Desktop width
           ),
@@ -331,7 +331,7 @@ void main() {
             Scaffold(
               body: MainLayout(
                 currentRoute: AppConstants.dashboardRoute,
-                child: Container(child: Text('Content')),
+                child: Text('Content'),
               ),
             ),
             screenWidth: 600, // Mobile width
@@ -360,7 +360,7 @@ void main() {
             Scaffold(
               body: MainLayout(
                 currentRoute: AppConstants.dashboardRoute,
-                child: Container(child: Text('Content')),
+                child: Text('Content'),
               ),
             ),
             screenWidth: 600, // Mobile width
@@ -391,7 +391,7 @@ void main() {
           createTestWidget(
             MainLayout(
               currentRoute: AppConstants.dashboardRoute,
-              child: Container(child: Text('Content')),
+              child: Text('Content'),
             ),
             screenWidth: AppConstants.mobileBreakpoint.toDouble() + 1,
           ),
@@ -407,7 +407,7 @@ void main() {
             Scaffold(
               body: MainLayout(
                 currentRoute: AppConstants.dashboardRoute,
-                child: Container(child: Text('Content')),
+                child: Text('Content'),
               ),
             ),
             screenWidth: AppConstants.mobileBreakpoint.toDouble() - 1,
